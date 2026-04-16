@@ -1,54 +1,199 @@
-# Awesome AutoResearch [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+# 🤖 awesome-autoresearch - Curated research tools for faster results
 
-A curated list of AutoResearch use cases **with optimization traces** and open source implementations. Every entry includes a link to the actual optimization trajectory so you can see what the agent tried, not just the final result.
+[![Download](https://img.shields.io/badge/Download-Visit%20the%20GitHub%20page-blue?style=for-the-badge)](https://github.com/SaurabhDurge/awesome-autoresearch)
 
-## What is AutoResearch?
+## 📥 Download
 
-AutoResearch is, at its core, a prompt. Karpathy released it as a single markdown file - `program.md`, that instructs a coding agent (Claude Code, Codex, or similar) to follow an optimization workflow. The agent edits one file (`train.py`, that trains a language model), runs for a fixed 5 minutes on a GPU, checks whether the metric improved, and either commits the change or reverts it. Then it loops forever.
+Use this link to visit the GitHub page and download the files you need:
 
-<p align="center">
-<img src="autoresearch-loop.png" width="400">
-</p>
+https://github.com/SaurabhDurge/awesome-autoresearch
 
-The specific `program.md` that ships with AutoResearch is written for one task: training a GPT model. But the structure - iteratively optimizing a file against an evaluation metric, with a discard/keep loop - turns out to be portable. In the weeks since release, the community has adapted it to GPU kernel optimization, template engine optimization, tabular ML engineering, and more. The `program.md` for each of these looks different, but the loop is the same.
+## 🧭 What this project is
 
-## Use Cases
+awesome-autoresearch is a curated list of AutoResearch use cases, trace examples, and open source implementations. It brings together tools and ideas for AI research, model checks, code optimization, and autonomous agents in one place.
 
-| Use Case | Description | Author | Links | Traces |
-|----------|-------------|--------|-------|--------|
-| LLM training optimization | The original - optimize nanoGPT training code. 20 improvements found overnight on hand-tuned code | Andrej Karpathy | [GitHub](https://github.com/karpathy/autoresearch) · [Tweet](https://x.com/karpathy/status/2031088031709675676) | [progress chart](https://github.com/karpathy/autoresearch/blob/master/progress.png) |
-| Speed up Shopify's template engine | 53% faster parse+render, 61% fewer allocations from 93 automated commits on Shopify's Liquid engine | Tobi Lutke (Shopify CEO) | [GitHub](https://github.com/davebcn87/pi-autoresearch) · [Tweet](https://x.com/tobi/status/2032212531846971413) | [PR](https://github.com/Shopify/liquid/pull/2056) |
-| GPU kernel optimization | Autoresearch applied to CUDA kernel optimization (18 → 187 TFLOPS) | RightNow AI | [GitHub](https://github.com/RightNow-AI/autokernel) · [Tweet](https://x.com/Akashi203/status/2031533857082646769) | [progress chart](https://github.com/RightNow-AI/autokernel/blob/main/progress.png) |
-| Voice agent prompt engineering | Optimize voice agent prompts with automated evaluation (score 0.728 → 0.969) | Archie Sengupta | [GitHub](https://github.com/ArchishmanSengupta/autovoiceevals) · [Tweet](https://x.com/archiexzzz/status/2033258540312510702) | [progress chart](https://pbs.twimg.com/media/HDeR_UJbkAAj1P_?format=jpg&name=4096x4096) |
-| Predict baseball pitch speed | Build predictive model for pitch velocity from biomechanics data (R² 0.44 → 0.78) | Kyle Boddy (Driveline Baseball) | [Tweet](https://x.com/drivelinekyle/status/2032242254035992610) | [progress chart](https://pbs.twimg.com/media/HDP5FzEbEAAIIB0?format=jpg&name=4096x4096) |
-| XGBoost for tennis match prediction | Predict ATP/WTA match outcomes - encountered and documented reward hacking | Nick Oak | [Blog](https://nickoak.com/posts/tennis-xgboost-autoresearch/) · [GitHub](https://github.com/buildoak/tennis-xgboost-autoresearch) | [blog](https://nickoak.com/posts/tennis-xgboost-autoresearch/) |
-| RL post-training optimization | Autoresearch for RL hyperparameters on Qwen 0.5B + GSM8K (eval 0.475 → 0.550 in fewer steps) | Vivek Kashyap | [GitHub](https://github.com/vivekvkashyap/autoresearch-rl) · [Tweet](https://x.com/vivek_2332/status/2034137143870402935) | [progress chart](https://pbs.twimg.com/media/HDY-RmoaAAAySpk?format=jpg&name=medium) |
-| Ancient scroll ink detection | Vesuvius Challenge autoresearch agent swarm for ink detection models. 4 agents 24/7, cross-scroll generalization nearly doubled | Vesuvius Challenge | [Blog](https://scrollprize.substack.com/p/we-are-cooking) | [blog](https://scrollprize.substack.com/p/we-are-cooking) |
-| Earth system model optimization | Hybrid: LLM proposes formula structures, TPE optimizes parameters. Fire correlation 0.09→0.65 | Dev Paragiri (UMD CS) | [Tweet](https://x.com/devparagiri/status/2035075626273739068) · [Blog](https://paragiri.com/blog/2026/autoresearch-earth-system-models/) | [blog](https://paragiri.com/blog/2026/autoresearch-earth-system-models/) |
-| Bitcoin price formula discovery | Autonomous search for best time-based formula predicting Bitcoin price. 328 experiments, 50.5% RMSE improvement over power law. Walk-forward OOS evaluation with bootstrap significance testing | Carlos Baquero | [GitHub](https://github.com/CBaquero/BTCautoresearch) | [progress chart](https://github.com/CBaquero/BTCautoresearch/blob/main/fig_experiments.png) |
+Use it if you want to:
 
-## Implementations & Forks
+- Explore AutoResearch workflows
+- Find open source examples
+- Review optimization traces
+- Study how AI agents handle research tasks
+- Compare tools for research and code improvement
 
-| Project | Description | Links |
-|---------|-------------|-------|
-| **autoresearch** | The original - single GPU, 630 lines of Python | [GitHub](https://github.com/karpathy/autoresearch) |
-| **pi-autoresearch** | Generalized as a Pi extension. Works for any optimization target - test speed, bundle size, build times, Lighthouse scores | [GitHub](https://github.com/davebcn87/pi-autoresearch) |
-| **autoresearch-mlx** | Apple Silicon (MLX) port. No PyTorch required, uses unified memory | [GitHub](https://github.com/trevin-creator/autoresearch-mlx) |
-| **autoresearch-win-rtx** | Windows + consumer RTX GPU port (RTX 2060 through 4090) | [GitHub](https://github.com/jsegov/autoresearch-win-rtx) |
-| **autoresearch-at-home** | Distributed autoresearch - SETI@home style. Multi-agent swarm coordination | [GitHub](https://github.com/mutable-state-inc/autoresearch-at-home) |
-| **autoresearch (Claude Skill)** | Generalized as a Claude Code skill for any domain | [GitHub](https://github.com/uditgoenka/autoresearch) |
-| **agent-digivolve-harness** | A control layer for long-running CLI agent work. Generalizes the autoresearch keep/revert loop with persistent run state, explicit eval packages, baseline and holdout cases, and one bounded mutation per iteration | [GitHub](https://github.com/MatthewZMD/agent-digivolve-harness) |
-| **auto-agent** | Autoresearch, but for AI agents. Given a golden dataset, it autonomously improves a target agent through an iterative hypothesis-driven loop: analyze failures, spawn a coding agent to implement fixes, evaluate, and accept or rollback | [GitHub](https://github.com/alfonsograziano/auto-agent) |
+## 🪟 Run on Windows
 
-## Contributing
+This project is a GitHub repository, so you do not install a Windows app here. You download the repository files and open them on your PC.
 
-Want to add a use case? Open a PR or [file an issue](https://github.com/WecoAI/awesome-autoresearch/issues).
+### Step 1: Open the download page
 
-To make our work easier, please make submissions as verifiable as possible:
+Go to:
 
-- **Minimum**: a progress chart showing each experiment's score and breakthrough annotations (e.g. [Karpathy's progress chart](https://github.com/karpathy/autoresearch/blob/master/progress.png))
-- **Ideal**: a public repo with per-solution code and scores (the full exploration trace), or a [Weco Observe](https://docs.weco.ai/observe) dashboard link
+https://github.com/SaurabhDurge/awesome-autoresearch
 
-## License
+### Step 2: Download the files
 
-[CC0 1.0](LICENSE)
+On the GitHub page:
+
+- Click the green Code button
+- Choose Download ZIP
+- Save the file to your computer
+
+### Step 3: Unzip the folder
+
+After the download finishes:
+
+- Find the ZIP file in your Downloads folder
+- Right-click the file
+- Select Extract All
+- Pick a folder you can find again, such as Documents
+
+### Step 4: Open the project
+
+Open the extracted folder and look for files such as:
+
+- README.md
+- folders with examples
+- trace files
+- links to source projects
+
+If you use Visual Studio Code, you can right-click the folder and open it there. If not, you can read the files in Notepad.
+
+## 🧰 What you need
+
+You only need a Windows computer and a web browser.
+
+Helpful extras:
+
+- A ZIP tool, such as the built-in Windows extractor
+- A text editor, such as Notepad
+- A browser, such as Chrome, Edge, or Firefox
+
+## 🔎 What you will find inside
+
+This repository is built as an awesome list, so it is organized as a set of links and examples. It may include:
+
+- AutoResearch use cases
+- Agent-based research flows
+- Optimization traces
+- Code improvement samples
+- Open source repositories
+- Notes on LLM-based research tools
+- Self-improving AI examples
+
+## 🗂️ How to use the content
+
+Start at the top of the README and work through the sections one by one.
+
+A good path is:
+
+1. Read the use case names
+2. Open the links that match your goal
+3. Review the trace examples
+4. Compare the implementation links
+5. Save the tools you want to study later
+
+If you want to learn how research automation works, focus on:
+
+- agent loops
+- prompt flow
+- result checks
+- code changes
+- trace review
+
+## 🛠️ Common Windows setup steps
+
+If the repository includes folders or sample files, use this simple process:
+
+1. Download the ZIP from GitHub
+2. Extract the ZIP
+3. Open the main README
+4. Follow any links in the list
+5. Copy useful notes into your own folder
+
+If the repository points to external tools, you can open those links in your browser and compare them side by side.
+
+## 📚 Best way to read the repository
+
+For a non-technical user, the easiest way is to treat this as a guidebook.
+
+Look for:
+
+- section headers
+- bullet lists
+- source links
+- trace references
+- implementation notes
+
+If a link points to code you do not want to run, you can still read the page and learn from the example.
+
+## 🧪 Example use cases
+
+Here are common ways people use this kind of repository:
+
+- Study how an AI agent gathers data
+- Review how a model improves a draft answer
+- Compare optimization traces from different systems
+- Find open source tools for research tasks
+- Learn how autonomous agents plan steps
+- Check how a system tracks changes over time
+
+## 📌 File types you may see
+
+You may find:
+
+- README.md files
+- Markdown notes
+- text files
+- folder links
+- source code links
+- trace logs
+- example prompts
+
+## 🔗 Open source workflow
+
+The repository focuses on open source work, so many links may point to public projects. That helps you:
+
+- inspect how the tool works
+- compare approaches
+- reuse ideas in your own work
+- follow the path from input to output
+- learn how traces are recorded
+
+## 🧩 If you want to explore more
+
+After you open the repository, use the topics as a guide:
+
+- ai-agents
+- ai-research
+- automated-machine-learning
+- autonomous-agents
+- autoresearch
+- code-optimization
+- llm
+- self-improving-ai
+
+These topics tell you what kind of material the repository covers.
+
+## 🖥️ Simple Windows tips
+
+If a file does not open the way you expect:
+
+- Right-click the file
+- Choose Open with
+- Pick Notepad for text files
+- Pick your browser for HTML files
+- Pick your editor for markdown files
+
+If a folder has many files, sort by name so the README is easy to find.
+
+## 📎 Quick access
+
+Primary link:
+
+https://github.com/SaurabhDurge/awesome-autoresearch
+
+Use this page to download the repository and read the full list of AutoResearch resources
+
+## ✅ Good first action
+
+Open the GitHub page, download the ZIP file, extract it, and read the main README file inside the folder
